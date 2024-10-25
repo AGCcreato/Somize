@@ -1,0 +1,17 @@
+name: Auto Unzip File
+
+on:
+  push:
+    branches:
+      - master  # You can change this to your branch name
+
+jobs:
+  unzip_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository content
+        uses: actions/checkout@v2
+
+      - name: Unzip the file
+        run: unzip www.somize.com-working.zip> -d unzipped_content
